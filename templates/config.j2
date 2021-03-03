@@ -1,0 +1,33 @@
+<CVInstallManager_ClientSetup Focus="New" LocaleID="0" OEMID="1" Operationtype="0" RemoteClient="1" requestFlags="0" requestType="1">
+    <ClientAuthentication>
+        <userAccountToLogin domainName="" password="" userName="" />
+    </ClientAuthentication>
+    <CommServeInfo>
+        <CommserveHostInfo clientName="{{ commvault_server_client }}" hostName="{{ commvault_server_host }}" />
+    </CommServeInfo>
+    <clientComposition>
+        <clientInfo>
+            <client appDataLoc="" clientCertificate="" cvdPort="" installDirectory="/opt">
+                <clientEntity clientName="{{ commvault_client_name }}" hostName="{{ commvault_client_host }}" />
+                <jobResulsDir path="" />
+            </client>
+            <clientProps logFilesLocation="/var/log/commvault" />
+        </clientInfo>
+        <components>
+            <commonInfo globalFilters="2">
+                <subclientPlanToUse />
+                <storagePolicyToUse />
+            </commonInfo>
+            <componentInfo ComponentId="1003" ComponentName="Base0 Module" clientSidePackage="1" consumeLicense="1" osType="Unix" />
+            <componentInfo ComponentId="1002" ComponentName="File System Core" clientSidePackage="1" consumeLicense="1" osType="Unix" />
+        </components>
+        <clientError ErrorCode="0" />
+        <clientRoles bLaptopBackup="0" customRolesProp="" />
+    </clientComposition>
+    <installFlags autoRegister="0" decoupledInstall="0" forceIPV4="1" ignoreJobsRunning="0" install32Base="0" launchRolesManager="0" overrideClientInfo="0" restoreOnlyAgents="0" singleInterfaceBinding="0" unixGroup="" unixGroupAccess="7" unixOtherAccess="5" unixTempDirectory="">
+        <firewallInstall certificatePath="" enableFirewallConfig="1" encryptedTunnel="1" firewallConfigFile="" firewallConnectionType="2" httpProxyHostName="" httpProxyPortNumber="">
+            <proxyInfo clientName="{{ commvault_proxy_client }}" hostName="{{ commvault_proxy_host }}" portNumber="{{ commvault_tunnel_port }}" />
+        </firewallInstall>
+    </installFlags>
+    <organizationProperties authCode="{{ commvault_auth_code }}" />
+</CVInstallManager_ClientSetup>

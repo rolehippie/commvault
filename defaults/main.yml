@@ -1,0 +1,39 @@
+# Standards: 1.2
+---
+# @var commvault_installer_url:description: URL to donwload the installer from
+commvault_installer_url:
+
+# @var commvault_auth_domain:description: Domain for client authentication
+commvault_auth_domain:
+
+# @var commvault_auth_username:description: Username for client authentication
+commvault_auth_username:
+
+# @var commvault_auth_password:description: Password for client authentication
+commvault_auth_password:
+
+# @var commvault_auth_code:description: Code for client authentication
+commvault_auth_code:
+
+# @var commvault_proxy_host:description: Proxy host
+commvault_proxy_host:
+
+# @var commvault_proxy_client:description: Proxy client
+commvault_proxy_client:
+
+# @var commvault_tunnel_port:description: Tunnel port
+commvault_tunnel_port:
+
+# @var commvault_server_client:description: Name of the server
+commvault_server_client:
+
+# @var commvault_server_host:description: Hostname of the server
+commvault_server_host:
+
+# @var commvault_client_name:description: Name of the client
+commvault_client_name:
+
+# @var commvault_client_host:description: Hostname of the client
+commvault_client_host:
+
+...
