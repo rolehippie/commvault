@@ -12,6 +12,9 @@
   file:
     path: /opt/cvinstall
     state: directory
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
   tags:
     - commvault
 
@@ -30,6 +33,9 @@
   template:
     src: config.j2
     dest: /opt/cvinstall/installer.xml
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - commvault
 
