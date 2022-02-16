@@ -19,6 +19,7 @@ Building and improving this Ansible role have been sponsored by my employer **Pr
   * [commvault_auth_username](#commvault_auth_username)
   * [commvault_client_host](#commvault_client_host)
   * [commvault_client_name](#commvault_client_name)
+  * [commvault_enable_install](#commvault_enable_install)
   * [commvault_installer_url](#commvault_installer_url)
   * [commvault_proxy_client](#commvault_proxy_client)
   * [commvault_proxy_host](#commvault_proxy_host)
@@ -91,6 +92,16 @@ Name of the client
 
 ```YAML
 commvault_client_name:
+```
+
+### commvault_enable_install
+
+Optionally disable commvault install
+
+#### Default value
+
+```YAML
+commvault_enable_install: true
 ```
 
 ### commvault_installer_url

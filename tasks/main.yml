@@ -1,61 +1,66 @@
 # Standards: 1.2
 ---
-- name: Check installed instance
-  register: commvault_install
-  stat:
-    path: /opt/commvault/installer/silent_install
+- name: Install if enabled
+  when: commvault_enable_install
   tags:
     - commvault
+  block:
+    - name: Check installed instance
+      register: commvault_install
+      stat:
+        path: /opt/commvault/installer/silent_install
+      tags:
+        - commvault
 
-- name: Create required directory
-  when: not commvault_install.stat.exists | default(True)
-  file:
-    path: /opt/cvinstall
-    state: directory
-    owner: root
-    group: root
-    mode: u=rwx,g=rx,o=rx
-  tags:
-    - commvault
+    - name: Create required directory
+      when: not commvault_install.stat.exists | default(True)
+      file:
+        path: /opt/cvinstall
+        state: directory
+        owner: root
+        group: root
+        mode: u=rwx,g=rx,o=rx
+      tags:
+        - commvault
 
-- name: Download installer archive
-  when: not commvault_install.stat.exists | default(True)
-  unarchive:
-    src: "{{ commvault_installer_url }}"
-    dest: /opt/cvinstall
-    remote_src: True
-    creates: /opt/cvinstall/pkg/cvpkgadd
-  tags:
-    - commvault
+    - name: Download installer archive
+      when: not commvault_install.stat.exists | default(True)
+      unarchive:
+        src: "{{ commvault_installer_url }}"
+        dest: /opt/cvinstall
+        remote_src: True
+        creates: /opt/cvinstall/pkg/cvpkgadd
+      tags:
+        - commvault
 
-- name: Write installer config
-  when: not commvault_install.stat.exists | default(True)
-  template:
-    src: config.j2
-    dest: /opt/cvinstall/installer.xml
-    owner: root
-    group: root
-    mode: u=rw,g=r,o=r
-  tags:
-    - commvault
+    - name: Write installer config
+      when: not commvault_install.stat.exists | default(True)
+      template:
+        src: config.j2
+        dest: /opt/cvinstall/installer.xml
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+      tags:
+        - commvault
 
-- name: Execute custom installer
-  command:
-    cmd: >
-      /opt/cvinstall/pkg/silent_install
-      -params /opt/cvinstall/installer.xml
-      -commcelluser {{ commvault_auth_username }}
-      -commcellpassword {{ commvault_auth_password }}
-      -commcelldomain {{ commvault_auth_domain }}
-    creates: /opt/commvault/installer/silent_install
-  tags:
-    - commvault
+    - name: Execute custom installer
+      command:
+        cmd: >
+          /opt/cvinstall/pkg/silent_install
+          -params /opt/cvinstall/installer.xml
+          -commcelluser {{ commvault_auth_username }}
+          -commcellpassword {{ commvault_auth_password }}
+          -commcelldomain {{ commvault_auth_domain }}
+        creates: /opt/commvault/installer/silent_install
+      tags:
+        - commvault
 
-- name: Remove installer direcotry
-  file:
-    path: /opt/cvinstall
-    state: absent
-  tags:
-    - commvault
+    - name: Remove installer direcotry
+      file:
+        path: /opt/cvinstall
+        state: absent
+      tags:
+        - commvault
 
 ...

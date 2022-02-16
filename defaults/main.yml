@@ -1,5 +1,8 @@
 # Standards: 1.2
 ---
+# @var commvault_enable_install:description: Optionally disable commvault install
+commvault_enable_install: True
+
 # @var commvault_installer_url:description: URL to donwload the installer from
 commvault_installer_url:
 
