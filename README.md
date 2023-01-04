@@ -1,6 +1,6 @@
 # commvault
 
-[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/commvault) [![Testing Build](https://github.com/rolehippie/commvault/workflows/testing/badge.svg)](https://github.com/rolehippie/commvault/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/commvault/workflows/readme/badge.svg)](https://github.com/rolehippie/commvault/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/commvault/workflows/galaxy/badge.svg)](https://github.com/rolehippie/commvault/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/commvault)](https://github.com/rolehippie/commvault/blob/master/LICENSE)
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/commvault) [![General Workflow](https://github.com/rolehippie/commvault/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/commvault/actions/workflows/general.yml) [![Readme Workflow](https://github.com/rolehippie/commvault/actions/workflows/readme.yml/badge.svg)](https://github.com/rolehippie/commvault/actions/workflows/readme.yml) [![Galaxy Workflow](https://github.com/rolehippie/commvault/actions/workflows/galaxy.yml/badge.svg)](https://github.com/rolehippie/commvault/actions/workflows/galaxy.yml) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/commvault)](https://github.com/rolehippie/commvault/blob/master/LICENSE)
 
 Ansible role to install and configure an MongoDB cluster commvault.
 
@@ -170,7 +170,7 @@ commvault_tunnel_port:
 
 ## Dependencies
 
-- [rolehippie.docker](https://github.com/rolehippie/docker)
+- None
 
 ## License
 
