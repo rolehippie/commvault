@@ -1,0 +1,10 @@
+# Standards: 1.2
+---
+- name: Converge
+  hosts: all
+  vars:
+    commvault_enable_install: False
+  roles:
+    - role: rolehippie.commvault
+
+...
